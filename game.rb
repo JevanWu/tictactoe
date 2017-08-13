@@ -16,15 +16,15 @@ class Game
   end
 
   def game_status
-    @board.display_board 
+    @board.display_board
   end
 
   def has_winner?(current_player)
     left_diagonal = [[0,0],[1,1],[2,2]]
     right_diagonal = [[2,0],[1,1],[0,2]]
-    
+
     lines = []
-    
+
     [left_diagonal, right_diagonal].each do |line|
       lines << line if line.include?([@row, @col])
     end
@@ -38,7 +38,7 @@ class Game
   end
 
   def is_draw?
-    puts "It's a draw!" if @board.full?
+    @board.full?
   end
 end
 

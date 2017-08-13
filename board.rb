@@ -1,10 +1,10 @@
 class Board
 
-  BOARD_MAX_INDEX = 3 
+  BOARD_MAX_INDEX = 3
   attr_reader :board
 
-  def initialize() 
-   @board = Array.new(BOARD_MAX_INDEX){Array.new(BOARD_MAX_INDEX){nil}} 
+  def initialize()
+   @board = Array.new(BOARD_MAX_INDEX){Array.new(BOARD_MAX_INDEX)}
   end
 
   def cell_content(row, col)
@@ -23,7 +23,7 @@ class Board
       validate = false
       puts "Out of bounds, try another position"
     end
-    
+
     if cell_content
       validate = false
       puts "Cell occupied, try another position"
@@ -37,7 +37,7 @@ class Board
   end
 
   def full?
-    @board.flatten.compact.length == 9
+    @board.flatten.compact.length == BOARD_MAX_INDEX * BOARD_MAX_INDEX
   end
 
 end
